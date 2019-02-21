@@ -50,8 +50,7 @@ export const cleanSchedule = function (jsonResp) {
   var cleaned = {};
   for (var row of jsonResp[0].datesTaken) {
     var dateString = row.timestamp;
-    var date = new Date(dateString);
-    cleaned[dateString] = {text: date.getDate(), isTaken: row.taken || dateString <= today, dateString: dateString, isSelected: false, isTmpTaken: false, isHighlighted: false, isHoverable: false};
+    cleaned[dateString] = {text: date.getUTCDate(), isTaken: row.taken || dateString <= today, dateString: dateString, isSelected: false, isTmpTaken: false, isHighlighted: false, isHoverable: false};
   }
   return cleaned;
 }

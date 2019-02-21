@@ -37,7 +37,7 @@ var buildMinimum = function(listingId=1, minimumStay=3, takenOdds=3, endOdds=2) 
     datesTaken: []
   };
   var today = getStartOfToday();
-  var startDate = iterDate(today, -30);
+  var startDate = iterDate(today, -100);
   var endDate = iterDate(today, 365);
   var daysInARow = 0;
 
