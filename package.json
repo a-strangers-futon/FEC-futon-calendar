@@ -8,7 +8,7 @@
     "react-dev": "webpack -d --watch",
     "start-dev": "nodemon server/server.js",
     "build": "webpack -d",
-    "start": "sleep 10 && node server/server.js",
+    "start": "node server/server.js",
     "seed": "node database/seeding.js"
   },
   "author": "",
