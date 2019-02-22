@@ -60,7 +60,7 @@ class App extends React.Component {
     this.setState({calendarViewHidden: false});
   }
   componentDidMount() {
-    fetch(`ec2-3-87-57-254.compute-1.amazonaws.com/api/schedule/${this.state.listingId}`)
+    fetch(`http://ec2-3-87-57-254.compute-1.amazonaws.com/api/schedule/${this.state.listingId}`)
     .then((resp) => resp.json())
     .then((jsonResp) => this.setState({schedule: cleanSchedule(jsonResp)}))
   }
