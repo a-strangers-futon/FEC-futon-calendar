@@ -1,4 +1,5 @@
 var express = require('express');
+var compression = require('compression')
 var app = express();
 var path = require('path');
 var bodyParse = require('body-parser');
@@ -7,6 +8,7 @@ var db = require('../database/index.js');
 var port = 3002;
 
 app.set('port', port);
+app.use(compression())
 
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

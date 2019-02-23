@@ -5,6 +5,6 @@ COPY package*.json /usr/src/app/
 COPY webpack.config.js /usr/src/app/
 COPY . /usr/src/app
 RUN npm install
-RUN npm run build
+RUN npm run buildproduction
 EXPOSE 3002
 CMD [ "npm", "run", "start" ]

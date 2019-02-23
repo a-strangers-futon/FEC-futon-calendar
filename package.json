@@ -8,6 +8,7 @@
     "react-dev": "webpack -d --watch",
     "start-dev": "nodemon server/server.js",
     "build": "webpack -d",
+    "buildproduction": "webpack -p",
     "start": "node server/server.js",
     "seed": "node database/seeding.js"
   },
