@@ -3,16 +3,19 @@ import _ from 'underscore';
 import React from 'react';
 import { BookingView } from './booking.jsx';
 import { DualCalendar } from './dualCalendar.jsx';
-import { cleanSchedule, dateRange, getUrlParams, randInt } from './utils.jsx';
+import { cleanSchedule, dateRange, randInt } from './utils.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    var urlParams = {listingId: '1'};
-    _.extend(urlParams, getUrlParams(window.location.search));
+    var listingId = Number.parseInt(window.location.pathname.split('/')[1], 10);
+
+    if (!listingId) {
+      listingId = 1;
+    }
 
     this.state = {
-      listingId: urlParams.listingId,
+      listingId: listingId,
       price: randInt(100, 700),
       selectedStartDate: null,
       selectedEndDate: null,

@@ -27,4 +27,6 @@ app.get('/api/schedule/:listingId', function(req, res){
   });
 });
 
+app.use('/:listingId', express.static(path.join(__dirname, '../client')));
+
 app.listen(app.get('port'));
